@@ -10,7 +10,6 @@ var contpares=0;
 var continpares=0;
 var Qceros=0;
 var Qpos=0;
-var Qneg=0;
 var SumPos=0;
 var SumNeg=0;
 var prompos;
@@ -18,7 +17,7 @@ var n_max=0;
 var n_min=0;
 var l_max;
 var l_min;
-var prom=0;
+
 
 
 while (ingLetra != "Informar" && ingLetra != "informar")
@@ -76,7 +75,7 @@ pares=num1[y] % 2;
         {
 
             SumNeg=num1[y]+SumNeg;
-            Qneg++;
+            
             
         } 
 // cuento ceros y y tot

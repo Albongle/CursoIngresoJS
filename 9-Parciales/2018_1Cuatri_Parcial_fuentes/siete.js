@@ -1,8 +1,8 @@
 function mostrar()
 {
     var nota = new Array();
-    var n=22;
-    var s="p";
+    var n;
+    var s;
     var sex= new Array();
     var x=1;
     var promtotal=0;
@@ -13,7 +13,7 @@ function mostrar()
     while (x<6)
     {
 
-        while (n< 0 || n>= 11)
+        while (n< 0 || n>= 11 || n=="")
         {
 
             n=parseInt(prompt("Ingrese la nota del Alumno " + x  + " :" , "0 a 10"));
@@ -47,8 +47,8 @@ function mostrar()
 
         sex[x]=s;
         x++;
-        s="";
-        n=22;
+        
+        
 
         
     }
