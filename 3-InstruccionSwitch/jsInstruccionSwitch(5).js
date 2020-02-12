@@ -1,11 +1,13 @@
 function mostrar()
 {
 //tomo la edad  
-var Hora=parseInt(document.getElementById("Hora").value);
+var laHora;
+laHora= parseInt(document.getElementById("hora").value);
+
 
 //alert (laHora);
 	
-switch (Hora){
+switch (laHora){
 case 7:
 case 8:
 case 9:
@@ -16,7 +18,6 @@ case 11:
     break;
   }
 }
-
 
 
 }
