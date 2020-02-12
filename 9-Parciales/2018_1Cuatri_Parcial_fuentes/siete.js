@@ -1,62 +1,52 @@
 function mostrar()
 {
-    var nota = new Array();
-    var n;
-    var s;
-    var sex= new Array();
-    var x=1;
+    var nota_a = new Array();
+    var nota;
+    var sexo;
+    var sexo_a= new Array();
+    var x_incremento=1;
     var promtotal=0;
     var NotaBaja;
     var sexnotabaja;
     var cont=0;
 
-    while (x<6)
+    for (x_incremento=1; x_incremento<6;x_incremento++)
     {
-
-        while (n< 0 || n>= 11 || n=="")
+        nota=parseInt(prompt("Ingrese la nota del Alumno " + x_incremento  + " :" , "0 a 10"));
+        while (nota< 0 || nota > 10)
         {
-
-            n=parseInt(prompt("Ingrese la nota del Alumno " + x  + " :" , "0 a 10"));
-            if (n< 0 || n>= 11) 
-                {
-                    alert("Verifique la nota ingresada");
+            alert("Verifique la nota ingresada");
                 
-                }
-
-
+            nota=parseInt(prompt("Ingrese la nota del Alumno " + x_incremento  + " :" , "0 a 10"));
+            
         }
          
-        nota[x]=n;
-        while ((s != "F" && s != "f") && (s != "M" && s != "m"))
-        {
+        nota_a[x_incremento]=n;
 
-            s=prompt("Ingrese el sexo del Alumno " + x  + " :", "M o F");
-            if ((s != "F" && s != "f") && (s != "M" && s != "m")) 
-                {
-                    alert("Verifique el sexo ingresado");
-                
-                }
-        
+        sexo=prompt("Ingrese el sexo del Alumno " + x_incremento  + " :", "M o F");
+        while ((sexo != "F" && sexo != "f") && (sexo != "M" && sexo != "m"))
+        {
+            alert("Verifique el sexo ingresado");
+            sexo=prompt("Ingrese el sexo del Alumno " + x_incremento  + " :", "M o F");
 
         }
-        if (n<nota[x-1])
+        sexo_a[x_incremento]=sexo;
+        
+        if (nota<nota_a[x_incremento-1])
         {
-            NotaBaja=n;
-            sexnotabaja=s;
+            NotaBaja=nota;
+            sexnotabaja=sexo;
         } 
 
-        sex[x]=s;
-        x++;
+       
         
-        
-
-        
+               
     }
 
     for (y=1; y<6; y++)
         {
             promtotal=nota[y]+promtotal;
-            if (nota[y]>=6 && (sex[y]=="M" ||sex[y]=="m"))
+            if (nota_a[y]>=6 && (sexo_a[y]=="M" ||sexo_a[y]=="m"))
             {
                 cont=cont+1;
             }
