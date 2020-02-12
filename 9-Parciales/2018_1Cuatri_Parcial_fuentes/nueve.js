@@ -1,14 +1,13 @@
 function mostrar()
 {
 var produc;
-var produc_pesado;
 var marcapesado;
-var Qprodbajocero;
-var sumpeso;
+var Qprodbajocero=0;
+var sumpeso=0;
 var prompeso;
-var pesoMax
+var pesoMax=0;
 var pesoMin;
-var Qtemppares;
+var Qtemppares=0;
 var peso;
 var temp;
 var temp_pares;
@@ -31,16 +30,12 @@ while (produc != "Informar")
 
     }
 temp_pares=temp%2;
-if (temp_pares<1)
+if (temp_pares==0)
     {
     Qtemppares++;
 
     }
-if(produc_pesado<peso)
-    {   
-    produc_pesado=peso;
-    marcapesado=produc;
-    }
+
 
 if (temp < 0)
     {
@@ -48,12 +43,19 @@ if (temp < 0)
     }
 sumpeso=peso+sumpeso;
 
-if (peso>pesoMax)
+if (incremento==1)
+{ 
+    pesoMax=peso;
+    pesoMin=peso;
+    marcapesado=produc;
+}   
+else if (peso>pesoMax)
 {
     pesoMax=peso;
+    marcapesado=produc;
 
 }
-if (peso>pesoMin)
+else if (peso < pesoMin)
 {
     pesoMin=peso;
 
