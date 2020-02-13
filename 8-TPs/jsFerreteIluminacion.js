@@ -93,7 +93,7 @@ function CalcularPrecio ()
         }
     }
 
-  importeF=(precio*cantidad)-descuento
+  importeF=(precio*cantidad)-descuento;
   if (importeF>120)
   {
     impuesto=(importeF*10)/100;
