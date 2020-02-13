@@ -25,11 +25,13 @@ function CalcularPrecio ()
     //Cantidad
 
     cantidad=parseInt(document.getElementById("Cantidad").value);
+  
     marca=document.getElementById("Marca").value;
 
     if (cantidad>=6)
     {
-        descuento=(precio*50)/100;
+        descuento=((precio*cantidad)*50)/100;
+        
     }
     else
     {
@@ -39,12 +41,12 @@ function CalcularPrecio ()
             {
                 if (marca=="ArgentinaLuz")
                 {
-                    descuento=(precio*40)/100;
+                    descuento=((precio*cantidad)*40)/100;
                 
                 }
                 else
                 {
-                    descuento=(precio*30)/100;  
+                    descuento=((precio*cantidad)*30)/100;  
                 }
                 break;
             }
@@ -52,11 +54,11 @@ function CalcularPrecio ()
             {
                 if (marca=="ArgentinaLuz" ||marca=="FelipeLamparas" )
                 {
-                    descuento=(precio*25)/100;  
+                    descuento=((precio*cantidad)*25)/100;  
                 } 
                 else
                 {
-                    descuento=(precio*20)/100;  
+                    descuento=((precio*cantidad)*20)/100;  
                 }
                 break;
 
@@ -68,17 +70,17 @@ function CalcularPrecio ()
                 {
                     case "ArgentinaLuz":
                     {
-                        descuento=(precio*15)/100; 
+                        descuento=((precio*cantidad)*15)/100; 
                         break;
                     }
                     case "FelipeLamparas":
                     {
-                        descuento=(precio*10)/100; 
+                        descuento=((precio*cantidad)*10)/100; 
                         break;
                     }
                     default:
                     {
-                        descuento=(precio*5)/100; 
+                        descuento=((precio*cantidad)*5)/100; 
                         break;
 
                     }
@@ -96,7 +98,12 @@ function CalcularPrecio ()
   importeF=(precio*cantidad)-descuento;
   if (importeF>120)
   {
-    impuesto=(importeF*10)/100;
+    impuesto=importeF*10/100;
+
+  }
+  else
+  {
+      impuesto=0;
   }
     importeF=importeF+impuesto;
    document.getElementById("precioDescuento").value= "El importe total es " + importeF + " Usted pago X de IIBB." + impuesto;
