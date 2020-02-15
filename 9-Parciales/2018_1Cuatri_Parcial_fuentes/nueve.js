@@ -17,13 +17,13 @@ while (produc != "Informar")
 {
     
     peso=parseInt(prompt("Ingrese el peso del producto " + incremento  + " :" , "1-100"));
-    while (peso < 1 || peso >100)
+    while (peso < 1 || peso >100 || isNaN(peso))
     {
         peso=parseInt(prompt("Ingrese el peso del producto " + incremento  + " :" , "1-100"));
 
     } 
     temp=parseInt(prompt("Ingrese la temp del producto " + incremento  + " :" , "-30 a 30"));
-    while (temp < -30 || temp > 30)
+    while (temp < -30 || temp > 30 || isNaN(temp))
     {
         temp=parseInt(prompt("Ingrese la temp del producto " + incremento  + " :" , "-30 a 30"));
 

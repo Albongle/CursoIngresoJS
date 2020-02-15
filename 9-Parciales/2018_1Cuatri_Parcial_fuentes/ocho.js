@@ -35,7 +35,7 @@ while (ingLetra != "Informar" && ingLetra != "informar")
 
     ingNum=parseInt(prompt("Ingrese un numero " + x  + " :" , "-100 a 100"));
 
-    while (ingNum < -100 || ingNum >100) 
+    while (ingNum < -100 || ingNum >100 || isNaN(ingNum)) 
         {
             alert("Verifique el numero ingresado");
             ingNum=parseInt(prompt("Ingrese un numero " + x  + " :" , "-100 a 100"));

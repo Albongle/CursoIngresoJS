@@ -13,7 +13,7 @@ function mostrar()
     for (x_incremento=1; x_incremento<6;x_incremento++)
     {
         nota=parseInt(prompt("Ingrese la nota del Alumno " + x_incremento  + " :" , "0 a 10"));
-        while (nota< 0 || nota > 10)
+        while (nota< 0 || nota > 10 || isNaN(nota))
         {
             alert("Verifique la nota ingresada");
                 
@@ -21,7 +21,7 @@ function mostrar()
             
         }
          
-        nota_a[x_incremento]=n;
+        nota_a[x_incremento]=nota;
 
         sexo=prompt("Ingrese el sexo del Alumno " + x_incremento  + " :", "M o F");
         while ((sexo != "F" && sexo != "f") && (sexo != "M" && sexo != "m"))
@@ -45,7 +45,7 @@ function mostrar()
 
     for (y=1; y<6; y++)
         {
-            promtotal=nota[y]+promtotal;
+            promtotal=nota_a[y]+promtotal;
             if (nota_a[y]>=6 && (sexo_a[y]=="M" ||sexo_a[y]=="m"))
             {
                 cont=cont+1;
