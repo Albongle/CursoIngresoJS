@@ -3,7 +3,7 @@ function mostrar()
 
 var sexo = prompt("ingrese f ó m .");
 
-while (sexo !="f" && sexo !="m")
+while (sexo !="f" && sexo !="m" || !(isNaN(sexo)) )
 {
 	alert("Verifique el sexo ingresado");
 	sexo = prompt("ingrese f ó m .");
