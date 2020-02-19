@@ -4,10 +4,10 @@ function mostrar()
 	var contador=0;
 	var positivo=0;
 	var negativo=1;
-	var respuesta="si";
+	var respuesta;
 	var num;
 
-	while(respuesta =="si" )
+	do 
 	{
 
 	num= parseInt(prompt("Ingrese el numero " + (contador+1) + ": ", "00"));
@@ -37,6 +37,7 @@ function mostrar()
 
 		}
 	}
+	while(respuesta =="si" );
 
 
 	document.getElementById('suma').value=positivo;

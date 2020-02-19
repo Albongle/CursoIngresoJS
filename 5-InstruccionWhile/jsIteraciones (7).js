@@ -3,10 +3,10 @@ function mostrar()
 
 	var contador=0;
 	var acumulador=0;
-	var respuesta='si';
+	var respuesta;
 	var num;
 
-	while(respuesta =="si" )
+	do
 	{
 
 	num= parseInt(prompt("Ingrese el numero " + (contador+1) + ": ", "00"));
@@ -25,8 +25,9 @@ function mostrar()
 		respuesta=prompt("Desea seguir ingresando numeros: ", "si o no");;
 
 		}
+
 	}
-	
+	while(respuesta =="si" );
 
 
 document.getElementById('suma').value=acumulador;

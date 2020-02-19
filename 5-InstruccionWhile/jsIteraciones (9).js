@@ -6,9 +6,9 @@ function mostrar()
 	var contador=0;
 	var max;
 	var min;
-	var respuesta='si';
+	var respuesta;
 
-	while(respuesta !="no" )
+	do 
 	{
 
 	num= parseInt(prompt("Ingrese el numero " + (contador+1) + ": ", "00"));
@@ -42,6 +42,7 @@ function mostrar()
 
 		}
 	}
+	while(respuesta !="no" );
 
 	document.getElementById('maximo').value=max;
 	document.getElementById('minimo').value=min;
