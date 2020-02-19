@@ -82,17 +82,21 @@ function mostrar()
 
 	promPos=sumPos/qPos;
 	promNeg=sumNeg/qNeg;
-	difPosNeg=qPos-qNeg;	
-
-alert("Suma de los negativos " + sumNeg);
-alert("Suma de los positivos " + sumPos);
-alert("Cantidad de positivos " + qPos);
-alert("Cantidad de negativos " + qNeg);
-alert("Cantidad de ceros " + qCeros);
-alert("Cantidad de números pares " + qPar);
-alert("Promedio de positivos " + promPos.toFixed(2));
-alert("Promedios de negativos " + promNeg.toFixed(2));
-alert("Diferencia entre positivos y negativos " + difPosNeg);
+	difPosNeg=qPos-qNeg;
+	//valido neg	
+	if (qNeg==0)
+	{
+		promNeg=0;
+	}
+document.writeln("Suma de los negativos " + sumNeg);
+document.writeln("Suma de los positivos " + sumPos);
+document.writeln("Cantidad de positivos " + qPos);
+document.writeln("Cantidad de negativos " + qNeg);
+document.writeln("Cantidad de ceros " + qCeros);
+document.writeln("Cantidad de números pares " + qPar);
+document.writeln("Promedio de positivos " + promPos.toFixed(2));
+document.writeln("Promedios de negativos " + promNeg.toFixed(2));
+document.writeln("Diferencia entre positivos y negativos " + difPosNeg);
 
 
 }//FIN DE LA FUNCIÓN

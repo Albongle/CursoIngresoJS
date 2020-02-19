@@ -25,10 +25,11 @@ function mostrar()
 	else
 	{
 		negativo=negativo*num;
+		contador++;
 
 	}
 
-	contador++;
+	
 	respuesta=prompt("Desea seguir ingresando numeros: ", "si o no");
 	while(!(isNaN(respuesta)) || respuesta !="si" && respuesta !="no")
 		{
@@ -38,7 +39,10 @@ function mostrar()
 		}
 	}
 	while(respuesta =="si" );
-
+	if (contador==0)
+	{
+		negativo=0;
+	}
 
 	document.getElementById('suma').value=positivo;
 	document.getElementById('producto').value=negativo;
