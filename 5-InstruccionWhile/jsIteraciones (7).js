@@ -19,6 +19,12 @@ function mostrar()
 	acumulador=+acumulador+num;	
 	contador++;
 	respuesta=prompt("Desea seguir ingresando numeros: ", "si o no");
+	while(!(isNaN(respuesta)) || respuesta !="si" && respuesta !="no")
+		{
+		alert("Verifique la respuesta ingresada");
+		respuesta=prompt("Desea seguir ingresando numeros: ", "si o no");;
+
+		}
 	}
 	
 
