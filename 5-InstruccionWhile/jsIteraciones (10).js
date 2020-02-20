@@ -88,15 +88,14 @@ function mostrar()
 	{
 		promNeg=0;
 	}
-document.writeln("Suma de los negativos " + sumNeg);
-document.writeln("Suma de los positivos " + sumPos);
-document.writeln("Cantidad de positivos " + qPos);
-document.writeln("Cantidad de negativos " + qNeg);
-document.writeln("Cantidad de ceros " + qCeros);
-document.writeln("Cantidad de números pares " + qPar);
-document.writeln("Promedio de positivos " + promPos.toFixed(2));
-document.writeln("Promedios de negativos " + promNeg.toFixed(2));
-document.writeln("Diferencia entre positivos y negativos " + difPosNeg);
-
-
+document.write("Suma de los negativos " + sumNeg +"</br>");
+document.write("Suma de los positivos " + sumPos+"</br>");
+document.write("Cantidad de positivos " + qPos+"</br>");
+document.write("Cantidad de negativos " + qNeg+"</br>");
+document.write("Cantidad de ceros " + qCeros+"</br>");
+document.write("Cantidad de números pares " + qPar+"</br>");
+document.write("Promedio de positivos " + promPos.toFixed(2)+"</br>");
+document.write("Promedios de negativos " + promNeg.toFixed(2)+"</br>");
+document.write("Diferencia entre positivos y negativos " + difPosNeg +"</br>");
+respuesta.to
 }//FIN DE LA FUNCIÓN

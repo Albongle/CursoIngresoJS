@@ -23,6 +23,7 @@ function mostrar()
 		max=num;
 		min=num;
 	}		
+	
 	else if (num>max)
 	{
 		max=num;
