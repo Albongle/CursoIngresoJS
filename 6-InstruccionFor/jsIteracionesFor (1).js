@@ -4,7 +4,7 @@ function mostrar()
 
 	for (cont=1;cont<11;cont++)
 	{
-	alert('iteración For ' + cont);
+		document.write('iteración For ' + cont + "</br>");
 
 	
 	}
