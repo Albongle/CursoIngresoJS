@@ -10,12 +10,13 @@ var pesoMin;
 var Qtemppares=0;
 var peso;
 var temp;
-var temp_pares;
-var incremento=1;
-produc=prompt("Ingrese el producto " + incremento  + " para informar ingrese: " , "Informar");
-while (produc != "Informar")
+var incremento=0;
+var valida;
+
+do 
 {
-    
+    incremento++;
+    produc=prompt("Ingrese el producto " + incremento);
     peso=parseInt(prompt("Ingrese el peso del producto " + incremento  + " :" , "1-100"));
     while (peso < 1 || peso >100 || isNaN(peso))
     {
@@ -29,8 +30,8 @@ while (produc != "Informar")
 
 
     }
-temp_pares=temp%2;
-if (temp_pares==0)
+
+if (temp%2==0)
     {
     Qtemppares++;
 
@@ -41,6 +42,7 @@ if (temp < 0)
     {
     Qprodbajocero++;
     }
+
 sumpeso=peso+sumpeso;
 
 if (incremento==1)
@@ -61,9 +63,10 @@ else if (peso < pesoMin)
 
 }
 
-    incremento++;
-    produc=prompt("Ingrese el producto " + incremento  + " para informar ingrese: " , "Informar")
+
+ valida=prompt('Para informar, ingrese "Informar"', 'Informar');
 }
+while (valida != "Informar");
 prompeso=sumpeso/incremento;
 document.write("La cantidad de temperaturas pares es: " + Qtemppares);
 document.write(" La marca del producto mas pesado es: " + marcapesado);
