@@ -1,18 +1,15 @@
 function mostrar()
 {
-var x=1;
+var incremento=1;
 var ingLetra;
 var ingNum;
-var num1= new Array();
-var letra1 =new Array();
-var pares=0;
 var contpares=0;
 var continpares=0;
 var Qceros=0;
 var Qpos=0;
 var SumPos=0;
 var SumNeg=0;
-var prompos;
+var prompos=0;
 var n_max=0;
 var n_min=0;
 var l_max;
@@ -20,101 +17,114 @@ var l_min;
 
 
 
-while (ingLetra != "Informar" && ingLetra != "informar")
-{
-    
-    ingLetra=prompt("Ingrese la letra numero " + x  + " para informar ingrese: " , "Informar");
-
-
-
-
-    if (ingLetra != "Informar" && ingLetra != "informar")
+    do 
     {
+    
+     ingNum=parseInt(prompt("Ingrese un numero " + incremento  + " :" , "-100 a 100"));
 
-    letra1[x]=ingLetra;
-
-    ingNum=parseInt(prompt("Ingrese un numero " + x  + " :" , "-100 a 100"));
-
-    while (ingNum < -100 || ingNum >100 || isNaN(ingNum)) 
+        while (ingNum < -100 || ingNum >100 || isNaN(ingNum)) 
         {
             alert("Verifique el numero ingresado");
-            ingNum=parseInt(prompt("Ingrese un numero " + x  + " :" , "-100 a 100"));
+            ingNum=parseInt(prompt("Ingrese un numero " + incremento  + " :" , "-100 a 100"));
         
         }
-
-        num1[x]=ingNum;
-        
-        x++;  
-    }
-
-
-}
-
-
-for (y=1; y<x; y++)
-{
-    //numeros pares
-pares=num1[y] % 2;
-    if (pares<1)
-    {
-        contpares++;
-    }
-    else
-    {
-        continpares++;
-    }
-//sumo positivos y tot
-    if (num1[y]>0)
+     ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - zz"); 
+        while (!(isNaN(ingLetra))) 
         {
-       SumPos=num1[y]+SumPos;
-       Qpos++;
-       
+         alert("Verifique la letra ingresada");
+         ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - zz"); 
+     
         }
-//sumo negativos y tot
-    else if (num1[y]<0)
-        {
+        //termino los ingresos
 
-            SumNeg=num1[y]+SumNeg;
-            
-            
+        /* aca empieza las validaciones */
+        
+        
+        if (ingNum%2==0) { //valido pares e impares
+
+            contpares++;
+        }
+        else
+        {
+            continpares++;
         } 
-// cuento ceros y y tot
-    else
-        {
-            Qceros++; 
+        
+        if (ingNum>0) { //valido pos, neg y ceros
+            SumPos=SumPos+ingNum;
+            Qpos++;
             
         }
-// maximos y minimos
-    if (num1[y] >= n_max)
+        else if (ingNum==0)
         {
-            n_max=num1[y];
-            l_max=letra1[y];
+
+            Qceros++;
         }
-    else if (num1[y] <= n_min)
+        else
         {
-            n_min=num1[y];
-            l_min=letra1[y];
+            SumNeg=SumNeg+ingNum;
         }
+    
+
+        if (incremento==1) { //valido max y min
+         n_max=ingNum;
+         n_min=ingNum;
+         l_max=ingLetra;
+         l_min=ingLetra;
+        }
+        else if (ingNum> n_max)
+        {
+            n_max=ingNum;
+            l_max=ingLetra;
+        }
+        else if (ingNum<n_min) {
+            n_min=ingNum;
+            l_min=ingLetra;
+            
+        }
+
+
+
+
+
+        /* aca termina las validaciones */
+
+
+
+        //valido continuidad
+        question=prompt("¿Desea informar?: " , "s o n");
+        while (question !="s" && question!="n" ) 
+        {
+            alert("Verifique la letra ingresada");
+            question=prompt("¿Desea informar?: " , "s o n");
         
+        }
+
+        incremento++;
 
 
+    }
+    while (question!= "s");
+
+
+
+if (Qpos>0)
+{
+prompos=SumPos/Qpos;
 }
 
-
-prompos=SumPos/Qpos;
 //a
-document.write("La cantidad de números pares es: " + contpares);
+document.write("La cantidad de números pares es: " + contpares + "</br>");
 //b
-document.write(" La cantidad de números impares es: " + continpares);
+document.write("La cantidad de números impares es: " + continpares + "</br>");
 //c
-document.write(" La cantidad de ceros es: " + Qceros);
+document.write("La cantidad de ceros es: " + Qceros + "</br>");
 //d
-document.write(" El promedio de todos los numeros POS ingresados es: " + prompos);
+document.write("El promedio de todos los numeros POS ingresados es: " + prompos + "</br>");
 //e
-document.write(" La suma total de los negativos es: " + SumNeg);
+document.write("La suma total de los negativos es: " + SumNeg + "</br>");
 //f
-document.write(" El numero Max es: " + n_max + " Su letra es " + l_max);
-document.write(" El numero Min es: " + n_min + " Su letra es " + l_min);
+document.write("El numero Max es: " + n_max + " Su letra es " + l_max + "</br>");
+document.write("El numero Min es: " + n_min + " Su letra es " + l_min + "</br>");
 
 
 }
