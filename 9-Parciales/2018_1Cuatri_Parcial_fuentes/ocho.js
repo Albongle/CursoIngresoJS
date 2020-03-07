@@ -16,7 +16,6 @@ var l_max;
 var l_min;
 
 
-
     do 
     {
     
@@ -28,11 +27,11 @@ var l_min;
             ingNum=parseInt(prompt("Ingrese un numero " + incremento  + " :" , "-100 a 100"));
         
         }
-     ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - zz"); 
-        while (!(isNaN(ingLetra))) 
+     ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - z"); 
+        while (ingLetra.length >1 || !(ingLetra>='a' && ingLetra <='z' || ingLetra>='A' && ingLetra <='Z'))
         {
          alert("Verifique la letra ingresada");
-         ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - zz"); 
+         ingLetra=prompt("Ingrese la letra n° " + incremento  + " :" , "a - z"); 
      
         }
         //termino los ingresos
